@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
-class EntrySettings extends StatelessWidget {
+class EntryPopover extends StatelessWidget {
   final void Function()? onEditTap;
   final void Function()? onDeleteTap;
-  const EntrySettings({
+
+  const EntryPopover({
     super.key,
     required this.onEditTap,
     required this.onDeleteTap,

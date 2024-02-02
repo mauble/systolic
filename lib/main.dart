@@ -29,13 +29,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var brightness = MediaQuery.of(context).platformBrightness;
-    var isDarkMode = brightness == Brightness.dark;
+    var statusBarText =
+        brightness == Brightness.dark ? Brightness.light : Brightness.dark;
 
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
     SystemChrome.setSystemUIOverlayStyle(
-      SystemUiOverlayStyle(
-        statusBarIconBrightness:
-            isDarkMode ? Brightness.light : Brightness.dark,
+      const SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
         systemNavigationBarColor: Colors.transparent,
       ),
@@ -50,6 +49,15 @@ class MyApp extends StatelessWidget {
           brightness: brightness,
         ),
         fontFamily: GoogleFonts.figtree().fontFamily,
+        appBarTheme: AppBarTheme(
+          systemOverlayStyle: SystemUiOverlayStyle(
+            statusBarBrightness: statusBarText,
+            statusBarIconBrightness: statusBarText,
+          ),
+          elevation: 0,
+          scrolledUnderElevation: 0,
+          backgroundColor: Colors.transparent,
+        ),
       ),
     );
   }

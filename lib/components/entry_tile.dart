@@ -4,12 +4,13 @@ import 'package:popover/popover.dart';
 import 'package:intl/intl.dart';
 
 import 'package:systolic/models/entry.dart';
-import 'package:systolic/components/entry_settings.dart';
+import 'package:systolic/components/entry_popover.dart';
 
 class EntryTile extends StatelessWidget {
   final Entry entry;
   final void Function()? onEditTap;
   final void Function()? onDeleteTap;
+
   const EntryTile(
       {super.key,
       required this.entry,
@@ -21,15 +22,15 @@ class EntryTile extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.surfaceVariant,
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(12),
       ),
       margin: const EdgeInsets.only(bottom: 20, left: 20, right: 20),
-      padding: const EdgeInsets.only(left: 20),
+      padding: const EdgeInsets.only(left: 5),
       child: ListTile(
         title: Text(
           '${entry.systole}・${entry.diastole}・${entry.pulse}',
           style: TextStyle(
-            fontSize: 20,
+            fontSize: 21,
             fontFamily: GoogleFonts.chivoMono().fontFamily,
           ),
         ),
@@ -39,24 +40,23 @@ class EntryTile extends StatelessWidget {
               entry.time,
             ),
           ),
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 16,
-            fontFamily: GoogleFonts.chivoMono().fontFamily,
           ),
         ),
         trailing: Builder(
-          builder: (context) => IconButton(
-            icon: const Icon(Icons.more_vert),
-            onPressed: () => showPopover(
+          builder: (context) => GestureDetector(
+            onTap: () => showPopover(
               width: 100,
               height: 100,
               context: context,
               backgroundColor: Theme.of(context).colorScheme.background,
-              bodyBuilder: (context) => EntrySettings(
+              bodyBuilder: (context) => EntryPopover(
                 onEditTap: onEditTap,
                 onDeleteTap: onDeleteTap,
               ),
             ),
+            child: const Icon(Icons.more_vert),
           ),
         ),
       ),

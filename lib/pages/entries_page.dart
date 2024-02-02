@@ -3,9 +3,10 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'package:systolic/components/entry_tile.dart';
 import 'package:systolic/models/entry_database.dart';
 import 'package:systolic/models/entry.dart';
+import 'package:systolic/components/entry_tile.dart';
+import 'package:systolic/components/app_drawer.dart';
 
 class EntriesPage extends StatefulWidget {
   const EntriesPage({super.key});
@@ -26,10 +27,10 @@ class _EntriesPageState extends State<EntriesPage> {
   }
 
   void cancelDialog() {
+    Navigator.pop(context);
     systoleController.clear();
     diastoleController.clear();
     pulseController.clear();
-    Navigator.pop(context);
   }
 
   void updateDialog(int id) {
@@ -133,26 +134,36 @@ class _EntriesPageState extends State<EntriesPage> {
     List<Entry> currentEntries = entryDatabase.currentEntries;
 
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.transparent,
-      ),
       floatingActionButton: FloatingActionButton(
         onPressed: createEntry,
         child: const Icon(Icons.add),
       ),
+      appBar: AppBar(),
+      drawer: const AppDrawer(),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
-            padding: const EdgeInsets.only(bottom: 20, left: 22),
-            child: Text(
-              "Overview",
-              style: GoogleFonts.dmSerifText(
-                fontSize: 36,
-              ),
-            ),
-          ),
+          currentEntries.isEmpty
+              ? SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.7,
+                  child: const Center(
+                    child: Text(
+                      'Welcome to Systolic.\n\nTo start, just measure your blood pressure and\nenter your results by clicking the button below.',
+                      style: TextStyle(
+                        fontSize: 15,
+                      ),
+                    ),
+                  ),
+                )
+              : Padding(
+                  padding: const EdgeInsets.only(bottom: 20, left: 18),
+                  child: Text(
+                    "Measurements",
+                    style: GoogleFonts.dmSerifText(
+                      fontSize: 36,
+                    ),
+                  ),
+                ),
           Expanded(
             child: ListView.builder(
               itemCount: currentEntries.length,
