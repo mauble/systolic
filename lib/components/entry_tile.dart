@@ -22,7 +22,7 @@ class EntryTile extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.surfaceVariant,
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(15),
       ),
       margin: const EdgeInsets.only(bottom: 20, left: 20, right: 20),
       padding: const EdgeInsets.only(left: 5),

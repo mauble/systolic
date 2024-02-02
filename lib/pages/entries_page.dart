@@ -201,10 +201,10 @@ class _EntriesPageState extends State<EntriesPage> {
                     sortEntriesByTime(groupedEntries[dayKey]!);
 
                 return Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(bottom: 20, left: 18),
+                      padding: const EdgeInsets.only(bottom: 20, right: 18),
                       child: Text(
                         dayKey,
                         style: const TextStyle(
