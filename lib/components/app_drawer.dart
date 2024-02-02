@@ -33,7 +33,7 @@ class AppDrawer extends StatelessWidget {
             },
           ),
           DrawerTile(
-            title: "Settings",
+            title: "Options",
             leading: const Icon(Icons.settings),
             onTap: () {
               Navigator.pop(context);

@@ -35,20 +35,25 @@ class _EntriesPageState extends State<EntriesPage> {
   }
 
   void updateDialog(int id) {
-    context.read<EntryDatabase>().updateEntry(
-        id,
-        int.tryParse(systoleController.text) ?? 0,
-        int.tryParse(diastoleController.text) ?? 0,
-        int.tryParse(pulseController.text) ?? 0);
-    cancelDialog();
+    int systole = int.tryParse(systoleController.text) ?? 0;
+    int diastole = int.tryParse(diastoleController.text) ?? 0;
+    int pulse = int.tryParse(pulseController.text) ?? 0;
+
+    if (systole != 0 && diastole != 0 && pulse != 0) {
+      context.read<EntryDatabase>().updateEntry(id, systole, diastole, pulse);
+      cancelDialog();
+    }
   }
 
   void saveDialog() {
-    context.read<EntryDatabase>().addEntry(
-        int.tryParse(systoleController.text) ?? 0,
-        int.tryParse(diastoleController.text) ?? 0,
-        int.tryParse(pulseController.text) ?? 0);
-    cancelDialog();
+    int systole = int.tryParse(systoleController.text) ?? 0;
+    int diastole = int.tryParse(diastoleController.text) ?? 0;
+    int pulse = int.tryParse(pulseController.text) ?? 0;
+
+    if (systole != 0 && diastole != 0 && pulse != 0) {
+      context.read<EntryDatabase>().addEntry(systole, diastole, pulse);
+      cancelDialog();
+    }
   }
 
   void entryDialog(String title, MaterialButton operation) {
