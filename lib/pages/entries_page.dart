@@ -175,6 +175,15 @@ class _EntriesPageState extends State<EntriesPage> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          Padding(
+            padding: const EdgeInsets.only(bottom: 20, left: 18),
+            child: Text(
+              "Measurements",
+              style: GoogleFonts.dmSerifText(
+                fontSize: 36,
+              ),
+            ),
+          ),
           currentEntries.isEmpty
               ? SizedBox(
                   height: MediaQuery.of(context).size.height * 0.7,
@@ -187,54 +196,46 @@ class _EntriesPageState extends State<EntriesPage> {
                     ),
                   ),
                 )
-              : Padding(
-                  padding: const EdgeInsets.only(bottom: 20, left: 18),
-                  child: Text(
-                    "Measurements",
-                    style: GoogleFonts.dmSerifText(
-                      fontSize: 36,
-                    ),
+              : Expanded(
+                  child: ListView.builder(
+                    itemCount: groupedEntries.length,
+                    itemBuilder: (context, index) {
+                      final List<String> keys = groupedEntries.keys.toList();
+                      final String dayKey = keys[index];
+                      final List<Entry> entries =
+                          sortEntriesByTime(groupedEntries[dayKey]!);
+
+                      return Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding:
+                                const EdgeInsets.only(bottom: 20, left: 18),
+                            child: Text(
+                              dayKey,
+                              style: const TextStyle(
+                                fontSize: 22,
+                              ),
+                            ),
+                          ),
+                          ListView.builder(
+                            shrinkWrap: true,
+                            physics: const NeverScrollableScrollPhysics(),
+                            itemCount: entries.length,
+                            itemBuilder: (context, index) {
+                              final entry = entries[index];
+                              return EntryTile(
+                                entry: entry,
+                                onEditTap: () => updateEntry(entry),
+                                onDeleteTap: () => deleteEntry(entry.id),
+                              );
+                            },
+                          ),
+                        ],
+                      );
+                    },
                   ),
                 ),
-          Expanded(
-            child: ListView.builder(
-              itemCount: groupedEntries.length,
-              itemBuilder: (context, index) {
-                final List<String> keys = groupedEntries.keys.toList();
-                final String dayKey = keys[index];
-                final List<Entry> entries =
-                    sortEntriesByTime(groupedEntries[dayKey]!);
-
-                return Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 20, left: 18),
-                      child: Text(
-                        dayKey,
-                        style: const TextStyle(
-                          fontSize: 22,
-                        ),
-                      ),
-                    ),
-                    ListView.builder(
-                      shrinkWrap: true,
-                      physics: const NeverScrollableScrollPhysics(),
-                      itemCount: entries.length,
-                      itemBuilder: (context, index) {
-                        final entry = entries[index];
-                        return EntryTile(
-                          entry: entry,
-                          onEditTap: () => updateEntry(entry),
-                          onDeleteTap: () => deleteEntry(entry.id),
-                        );
-                      },
-                    ),
-                  ],
-                );
-              },
-            ),
-          ),
         ],
       ),
     );

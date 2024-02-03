@@ -24,7 +24,7 @@ class EntryTile extends StatelessWidget {
         color: Theme.of(context).colorScheme.surfaceVariant,
         borderRadius: BorderRadius.circular(15),
       ),
-      margin: const EdgeInsets.only(bottom: 20, left: 20, right: 20),
+      margin: const EdgeInsets.only(bottom: 15, left: 15, right: 15),
       padding: const EdgeInsets.only(left: 5),
       child: ListTile(
         title: Text(
