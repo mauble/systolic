@@ -1,6 +1,6 @@
 # systolic
 
-Systolic is an Android app for tracking your blood pressure and medication usage. You can set measurement reminders, make backups and export your history as a PDF file for easy sharing.
+Systolic is an Android app for tracking your blood pressure and medication usage. You can set measurement reminders, make backups of your measurements, and export your history as a PDF file for easy sharing.
 
 ## Getting Started
 
