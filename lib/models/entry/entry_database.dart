@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:isar/isar.dart';
 
-import 'package:systolic/models/entry.dart';
+import 'package:systolic/models/entry/entry.dart';
 
 class EntryDatabase extends ChangeNotifier {
   static late Isar isar;
@@ -16,7 +16,13 @@ class EntryDatabase extends ChangeNotifier {
     );
   }
 
-  // Write
+  Future<void> fetchEntries() async {
+    List<Entry> fetchedEntries = await isar.entrys.where().findAll();
+    currentEntries.clear();
+    currentEntries.addAll(fetchedEntries);
+    notifyListeners();
+  }
+
   Future<void> addEntry(int systole, int diastole, int pulse) async {
     final newEntry = Entry()
       ..systole = systole
@@ -28,15 +34,6 @@ class EntryDatabase extends ChangeNotifier {
     fetchEntries();
   }
 
-  // Read
-  Future<void> fetchEntries() async {
-    List<Entry> fetchedEntries = await isar.entrys.where().findAll();
-    currentEntries.clear();
-    currentEntries.addAll(fetchedEntries);
-    notifyListeners();
-  }
-
-  // Update
   Future<void> updateEntry(int id, int systole, int diastole, int pulse) async {
     final existingEntry = await isar.entrys.get(id);
     if (existingEntry != null) {
@@ -48,7 +45,6 @@ class EntryDatabase extends ChangeNotifier {
     }
   }
 
-  // Delete
   Future<void> deleteEntry(int id) async {
     await isar.writeTxn(() => isar.entrys.delete(id));
     await fetchEntries();

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:systolic/components/drawer_tile.dart';
+import 'package:systolic/components/app_drawer_tile.dart';
 import 'package:systolic/pages/entries_page.dart';
 import 'package:systolic/pages/options_page.dart';
 
@@ -14,7 +14,7 @@ class AppDrawer extends StatelessWidget {
       child: Column(
         children: [
           const Padding(
-            padding: EdgeInsets.only(left: 10, bottom: 35),
+            padding: EdgeInsets.only(left: 10, bottom: 40),
             child: DrawerHeader(
               child: Icon(Icons.monitor_heart),
             ),

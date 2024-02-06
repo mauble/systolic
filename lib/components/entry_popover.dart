@@ -20,7 +20,7 @@ class EntryPopover extends StatelessWidget {
             onEditTap!();
           },
           child: const SizedBox(
-            height: 50,
+            height: 45,
             child: Center(child: Text("Edit")),
           ),
         ),
@@ -30,7 +30,7 @@ class EntryPopover extends StatelessWidget {
             onDeleteTap!();
           },
           child: const SizedBox(
-            height: 50,
+            height: 45,
             child: Center(child: Text("Delete")),
           ),
         ),

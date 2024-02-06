@@ -4,8 +4,8 @@ import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 
-import 'package:systolic/models/entry_database.dart';
-import 'package:systolic/models/entry.dart';
+import 'package:systolic/models/entry/entry.dart';
+import 'package:systolic/models/entry/entry_database.dart';
 import 'package:systolic/components/entry_tile.dart';
 import 'package:systolic/components/app_drawer.dart';
 

@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:system_theme/system_theme.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'package:systolic/models/entry_database.dart';
+import 'package:systolic/models/entry/entry_database.dart';
 import 'package:systolic/pages/entries_page.dart';
 
 Future<void> main() async {
@@ -14,10 +14,8 @@ Future<void> main() async {
   await SystemTheme.accentColor.load();
 
   runApp(
-    MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (context) => EntryDatabase()),
-      ],
+    ChangeNotifierProvider(
+      create: (context) => EntryDatabase(),
       child: const MyApp(),
     ),
   );
