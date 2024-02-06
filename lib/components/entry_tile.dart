@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:popover/popover.dart';
 import 'package:intl/intl.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'package:systolic/models/entry/entry.dart';
 import 'package:systolic/components/entry_popover.dart';
@@ -26,7 +27,7 @@ class EntryTile extends StatelessWidget {
       ),
       margin: const EdgeInsets.only(bottom: 20, left: 15, right: 15),
       child: ListTile(
-        contentPadding: const EdgeInsets.only(left: 18, right: 14, bottom: 2),
+        contentPadding: const EdgeInsets.only(left: 21, right: 19, bottom: 2),
         title: Text(
           '${entry.systole}・${entry.diastole}・${entry.pulse}',
           style: TextStyle(
@@ -35,11 +36,8 @@ class EntryTile extends StatelessWidget {
           ),
         ),
         subtitle: Text(
-          DateFormat('HH:mm').format(
-            DateTime.fromMillisecondsSinceEpoch(
-              entry.time,
-            ),
-          ),
+          DateFormat(AppLocalizations.of(context)!.timeFormat)
+              .format(DateTime.fromMillisecondsSinceEpoch(entry.time)),
           style: const TextStyle(
             fontSize: 17,
           ),
@@ -47,7 +45,7 @@ class EntryTile extends StatelessWidget {
         trailing: Builder(
           builder: (context) => GestureDetector(
             onTap: () => showPopover(
-              width: 70,
+              width: 85,
               height: 90,
               context: context,
               backgroundColor: Theme.of(context).colorScheme.background,

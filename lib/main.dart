@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:system_theme/system_theme.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'package:systolic/models/entry/entry_database.dart';
 import 'package:systolic/pages/entries_page.dart';
@@ -39,7 +40,8 @@ class MyApp extends StatelessWidget {
     );
 
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
       home: const EntriesPage(),
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(

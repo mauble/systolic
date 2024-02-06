@@ -1,0 +1,21 @@
+{
+    "measurements": "計測",
+    "options": "オプション",
+
+    "addNewEntry": "エントリを追加",
+    "editEntry": "エントリを編集",
+
+    "cancel": "キャンセル",
+    "save": "保存",
+    "edit": "編集",
+    "delete": "削除",
+
+    "systole": "収縮期",
+    "diastole": "拡張期",
+    "pulse": "脈拍",
+
+    "welcome": "Systolicへようこそ。\n\n血圧を測定し、下のボタンをタップして値を入力してください。",
+
+    "dateFormat": "yyyy年MM月dd日",
+    "timeFormat": "hh:mm a"
+}

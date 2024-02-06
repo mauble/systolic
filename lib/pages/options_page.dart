@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 import 'package:systolic/components/app_drawer.dart';
 
 class OptionsPage extends StatelessWidget {
@@ -16,7 +18,7 @@ class OptionsPage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(bottom: 20, left: 18),
             child: Text(
-              "Options",
+              AppLocalizations.of(context)!.options,
               style: GoogleFonts.dmSerifText(
                 fontSize: 36,
               ),

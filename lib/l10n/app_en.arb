@@ -1,0 +1,21 @@
+{
+    "measurements": "Measurements",
+    "options": "Options",
+
+    "addNewEntry": "Add new entry",
+    "editEntry": "Edit entry",
+
+    "cancel": "Cancel",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+
+    "systole": "Systole",
+    "diastole": "Diastole",
+    "pulse": "Pulse",
+
+    "welcome": "Welcome to Systolic.\n\nTo start, just measure your blood pressure and\nenter your results by clicking the button below.",
+
+    "dateFormat": "MM/dd/yyyy",
+    "timeFormat": "hh:mm a"
+}

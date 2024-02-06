@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class EntryPopover extends StatelessWidget {
   final void Function()? onEditTap;
@@ -19,9 +20,9 @@ class EntryPopover extends StatelessWidget {
             Navigator.pop(context);
             onEditTap!();
           },
-          child: const SizedBox(
+          child: SizedBox(
             height: 45,
-            child: Center(child: Text("Edit")),
+            child: Center(child: Text(AppLocalizations.of(context)!.edit)),
           ),
         ),
         GestureDetector(
@@ -29,9 +30,9 @@ class EntryPopover extends StatelessWidget {
             Navigator.pop(context);
             onDeleteTap!();
           },
-          child: const SizedBox(
+          child: SizedBox(
             height: 45,
-            child: Center(child: Text("Delete")),
+            child: Center(child: Text(AppLocalizations.of(context)!.delete)),
           ),
         ),
       ],

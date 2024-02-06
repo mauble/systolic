@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:intl/intl.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'package:systolic/models/entry/entry.dart';
 import 'package:systolic/models/entry/entry_database.dart';
@@ -72,7 +73,8 @@ class _EntriesPageState extends State<EntriesPage> {
                 FilteringTextInputFormatter.digitsOnly,
                 LengthLimitingTextInputFormatter(3),
               ],
-              decoration: const InputDecoration(hintText: 'Systole'),
+              decoration: InputDecoration(
+                  hintText: AppLocalizations.of(context)!.systole),
             ),
             TextField(
               controller: diastoleController,
@@ -82,7 +84,8 @@ class _EntriesPageState extends State<EntriesPage> {
                 FilteringTextInputFormatter.digitsOnly,
                 LengthLimitingTextInputFormatter(3),
               ],
-              decoration: const InputDecoration(hintText: 'Diastole'),
+              decoration: InputDecoration(
+                  hintText: AppLocalizations.of(context)!.diastole),
             ),
             TextField(
               controller: pulseController,
@@ -92,14 +95,15 @@ class _EntriesPageState extends State<EntriesPage> {
                 FilteringTextInputFormatter.digitsOnly,
                 LengthLimitingTextInputFormatter(3),
               ],
-              decoration: const InputDecoration(hintText: 'Pulse'),
+              decoration: InputDecoration(
+                  hintText: AppLocalizations.of(context)!.pulse),
             ),
           ],
         ),
         actions: [
           MaterialButton(
             onPressed: cancelDialog,
-            child: const Text('Cancel'),
+            child: Text(AppLocalizations.of(context)!.cancel),
           ),
           operation,
         ],
@@ -113,19 +117,19 @@ class _EntriesPageState extends State<EntriesPage> {
     pulseController.text = entry.pulse.toString();
 
     entryDialog(
-        "Edit entry",
+        AppLocalizations.of(context)!.editEntry,
         MaterialButton(
           onPressed: () => updateDialog(entry.id),
-          child: const Text("Edit"),
+          child: Text(AppLocalizations.of(context)!.edit),
         ));
   }
 
   void createEntry() {
     entryDialog(
-        "Add new entry",
+        AppLocalizations.of(context)!.addNewEntry,
         MaterialButton(
           onPressed: saveDialog,
-          child: const Text("Save"),
+          child: Text(AppLocalizations.of(context)!.save),
         ));
   }
 
@@ -144,7 +148,7 @@ class _EntriesPageState extends State<EntriesPage> {
     entries.sort((a, b) => b.time.compareTo(a.time));
 
     for (var entry in entries) {
-      String dayKey = DateFormat('dd.MM.yyyy')
+      String dayKey = DateFormat(AppLocalizations.of(context)!.dateFormat)
           .format(DateTime.fromMillisecondsSinceEpoch(entry.time));
 
       if (groupedEntries.containsKey(dayKey)) {
@@ -178,7 +182,7 @@ class _EntriesPageState extends State<EntriesPage> {
           Padding(
             padding: const EdgeInsets.only(bottom: 20, left: 18),
             child: Text(
-              "Measurements",
+              AppLocalizations.of(context)!.measurements,
               style: GoogleFonts.dmSerifText(
                 fontSize: 36,
               ),
@@ -187,10 +191,10 @@ class _EntriesPageState extends State<EntriesPage> {
           currentEntries.isEmpty
               ? SizedBox(
                   height: MediaQuery.of(context).size.height * 0.7,
-                  child: const Center(
+                  child: Center(
                     child: Text(
-                      'Welcome to Systolic.\n\nTo start, just measure your blood pressure and\nenter your results by clicking the button below.',
-                      style: TextStyle(
+                      AppLocalizations.of(context)!.welcome,
+                      style: const TextStyle(
                         fontSize: 15,
                       ),
                     ),

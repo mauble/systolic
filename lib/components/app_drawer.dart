@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'package:systolic/components/app_drawer_tile.dart';
 import 'package:systolic/pages/entries_page.dart';
@@ -20,7 +21,7 @@ class AppDrawer extends StatelessWidget {
             ),
           ),
           DrawerTile(
-            title: "Measurements",
+            title: AppLocalizations.of(context)!.measurements,
             leading: const Icon(Icons.text_snippet),
             onTap: () {
               Navigator.pop(context);
@@ -33,7 +34,7 @@ class AppDrawer extends StatelessWidget {
             },
           ),
           DrawerTile(
-            title: "Options",
+            title: AppLocalizations.of(context)!.options,
             leading: const Icon(Icons.settings),
             onTap: () {
               Navigator.pop(context);
