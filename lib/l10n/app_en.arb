@@ -14,7 +14,7 @@
     "diastole": "Diastole",
     "pulse": "Pulse",
 
-    "welcome": "Welcome to Systolic.\n\nTo start, just measure your blood pressure and\nenter your results by clicking the button below.",
+    "welcome": "Welcome to Systolic.\n\nTo start, just measure your blood pressure and enter your results by clicking the button below.",
 
     "dateFormat": "MM/dd/yyyy",
     "timeFormat": "hh:mm a"

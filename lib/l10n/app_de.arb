@@ -14,7 +14,7 @@
     "diastole": "Diastole",
     "pulse": "Puls",
 
-    "welcome": "Willkommen bei Systolic.\n\nMessen Sie Ihren Blutdruck und tragen Sie Ihre\nWerte ein, indem Sie auf den Knopf unten tippen.",
+    "welcome": "Willkommen bei Systolic.\n\nMessen Sie Ihren Blutdruck und tragen Sie Ihre Werte ein, indem Sie auf den Knopf unten tippen.",
 
     "dateFormat": "dd.MM.yyyy",
     "timeFormat": "HH:mm"
