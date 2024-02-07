@@ -14,7 +14,7 @@
     "diastole": "舒張期",
     "pulse": "脈衝",
 
-    "welcome": "歡迎使用Systolic。\n\n要開始使用，請測量您的血壓，然後點擊下面的按鈕輸入數值。",
+    "welcome": "歡迎使用「Systolic」。\n\n要開始使用，請測量您的血壓，然後點擊下面的按鈕輸入數值。",
 
     "dateFormat": "yyyy/MM/dd",
     "timeFormat": "hh:mm a"

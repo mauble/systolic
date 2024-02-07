@@ -25,7 +25,7 @@ class OptionsPage extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: MediaQuery.of(context).size.height * 0.7,
+            height: MediaQuery.of(context).size.height * 0.6,
             child: const Center(
               child: Text(
                 'Work in Progress.',
