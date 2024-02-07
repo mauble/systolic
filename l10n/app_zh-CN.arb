@@ -15,7 +15,7 @@
     "diastole": "舒张压",
     "pulse": "脉搏",
 
-    "welcome": "欢迎使用「Systolic」。\n您仅需测量您的血压，并点击下方按钮输入您的结果以开始。",
+    "welcome": "欢迎使用「Systolic」。\n\n您仅需测量您的血压，并点击下方按钮输入您的结果以开始。",
 
     "dateFormat": "yyyy/MM/dd",
     "timeFormat": "hh:mm a"
