@@ -45,13 +45,14 @@ class EntryTile extends StatelessWidget {
         trailing: Builder(
           builder: (context) => GestureDetector(
             onTap: () => showPopover(
-              width: 85,
-              height: 90,
+              width: 90,
+              height: 100,
               context: context,
               backgroundColor: Theme.of(context).colorScheme.background,
               bodyBuilder: (context) => EntryPopover(
                 onEditTap: onEditTap,
                 onDeleteTap: onDeleteTap,
+                buttonHeight: 50,
               ),
             ),
             child: const Icon(Icons.more_vert),

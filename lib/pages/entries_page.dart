@@ -192,10 +192,17 @@ class _EntriesPageState extends State<EntriesPage> {
               ? SizedBox(
                   height: MediaQuery.of(context).size.height * 0.7,
                   child: Center(
-                    child: Text(
-                      AppLocalizations.of(context)!.welcome,
-                      style: const TextStyle(
-                        fontSize: 15,
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                        left: 20,
+                        right: 20,
+                      ),
+                      child: Text(
+                        AppLocalizations.of(context)!.welcome,
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                          fontSize: 15,
+                        ),
                       ),
                     ),
                   ),

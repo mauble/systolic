@@ -1,0 +1,21 @@
+{
+    "measurements": "測量",
+    "options": "選項",
+
+    "addNewEntry": "添加新的測量結果",
+    "editEntry": "編輯測量結果",
+
+    "cancel": "取消",
+    "save": "保持",
+    "edit": "編輯",
+    "delete": "刪減",
+
+    "systole": "收縮期",
+    "diastole": "舒張期",
+    "pulse": "脈衝",
+
+    "welcome": "歡迎使用Systolic。\n\n要開始使用，請測量您的血壓，然後點擊下面的按鈕輸入數值。",
+
+    "dateFormat": "yyyy/MM/dd",
+    "timeFormat": "hh:mm a"
+}
