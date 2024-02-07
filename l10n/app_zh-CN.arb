@@ -1,21 +1,21 @@
 {
-    "measurements": "测量",
-    "overview": "概述",
+    "measurements": "测量值",
+    "overview": "概览",
     "options": "选项",
 
-    "addNewEntry": "添加新的测量结果",
-    "editEntry": "编辑测量结果",
+    "addNewEntry": "新记录",
+    "editEntry": "编辑记录",
 
     "cancel": "取消",
-    "save": "保持",
+    "save": "保存",
     "edit": "编辑",
-    "delete": "删减",
+    "delete": "删除",
 
-    "systole": "收缩期",
-    "diastole": "舒张期",
-    "pulse": "脉冲",
+    "systole": "收缩压",
+    "diastole": "舒张压",
+    "pulse": "脉搏",
 
-    "welcome": "欢迎使用「Systolic」。\n\n要开始使用，请测量您的血压，然后点击下面的按钮输入数值。",
+    "welcome": "欢迎使用「Systolic」。\n您仅需测量您的血压，并点击下方按钮输入您的结果以开始。",
 
     "dateFormat": "yyyy/MM/dd",
     "timeFormat": "hh:mm a"
