@@ -3,7 +3,7 @@
     "overview": "概览",
     "options": "选项",
 
-    "addNewEntry": "新记录",
+    "addEntry": "新记录",
     "editEntry": "编辑记录",
 
     "cancel": "取消",
@@ -17,6 +17,6 @@
 
     "welcome": "欢迎使用「Systolic」。\n\n您仅需测量您的血压，并点击下方按钮输入您的结果以开始。",
 
-    "dateFormat": "yyyy/MM/dd",
+    "dateFormat": "yyyy年MM月dd日",
     "timeFormat": "hh:mm a"
 }

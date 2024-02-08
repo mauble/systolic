@@ -3,7 +3,7 @@
     "overview": "概要",
     "options": "オプション",
 
-    "addNewEntry": "測定結果を追加",
+    "addEntry": "測定結果を追加",
     "editEntry": "測定結果を編集",
 
     "cancel": "キャンセル",

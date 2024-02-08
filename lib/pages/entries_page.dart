@@ -126,7 +126,7 @@ class _EntriesPageState extends State<EntriesPage> {
 
   void createEntry() {
     entryDialog(
-        AppLocalizations.of(context)!.addNewEntry,
+        AppLocalizations.of(context)!.addEntry,
         MaterialButton(
           onPressed: saveDialog,
           child: Text(AppLocalizations.of(context)!.save),
