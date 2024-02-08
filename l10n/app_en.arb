@@ -1,6 +1,7 @@
 {
     "measurements": "Measurements",
     "overview": "Overview",
+    "medication": "Medication",
     "options": "Options",
 
     "addEntry": "Add new entry",

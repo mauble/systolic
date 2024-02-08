@@ -1,6 +1,7 @@
 {
     "measurements": "测量值",
     "overview": "概览",
+    "medication": "药物",
     "options": "选项",
 
     "addEntry": "新记录",

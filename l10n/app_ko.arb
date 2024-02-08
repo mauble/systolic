@@ -1,6 +1,7 @@
 {
     "measurements": "측정",
     "overview": "개요",
+    "medication": "약물",
     "options": "옵션",
 
     "addEntry": "새로운 측정 결과 추가",

@@ -4,6 +4,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:systolic/components/app_drawer_tile.dart';
 import 'package:systolic/pages/entries_page.dart';
 import 'package:systolic/pages/overview_page.dart';
+import 'package:systolic/pages/medication_page.dart';
 import 'package:systolic/pages/options_page.dart';
 
 class AppDrawer extends StatelessWidget {
@@ -16,7 +17,7 @@ class AppDrawer extends StatelessWidget {
       child: Column(
         children: [
           const Padding(
-            padding: EdgeInsets.only(left: 10, bottom: 40),
+            padding: EdgeInsets.only(bottom: 90),
             child: DrawerHeader(
               child: Icon(Icons.monitor_heart),
             ),
@@ -43,6 +44,19 @@ class AppDrawer extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) => const OverviewPage(),
+                ),
+              );
+            },
+          ),
+          DrawerTile(
+            title: AppLocalizations.of(context)!.medication,
+            leading: const Icon(Icons.medication_rounded),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const MedicationPage(),
                 ),
               );
             },
