@@ -1,9 +1,10 @@
 {
     "measurements": "Измерения",
     "overview": "Обзор",
+    "medication": "Лекарства",
     "options": "Параметры",
 
-    "addNewEntry": "Новая запись",
+    "addEntry": "Новая запись",
     "editEntry": "Редактировать запись",
 
     "cancel": "Отменить",
