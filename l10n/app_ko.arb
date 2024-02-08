@@ -1,9 +1,10 @@
 {
     "measurements": "측정",
     "overview": "개요",
+    "medication": "약물",
     "options": "옵션",
 
-    "addNewEntry": "새로운 측정 결과 추가",
+    "addEntry": "새로운 측정 결과 추가",
     "editEntry": "측정 결과 편집하기",
 
     "cancel": "취소",

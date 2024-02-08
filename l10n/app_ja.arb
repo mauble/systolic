@@ -1,9 +1,10 @@
 {
     "measurements": "計測",
     "overview": "概要",
+    "medication": "薬",
     "options": "オプション",
 
-    "addNewEntry": "測定結果を追加",
+    "addEntry": "測定結果を追加",
     "editEntry": "測定結果を編集",
 
     "cancel": "キャンセル",

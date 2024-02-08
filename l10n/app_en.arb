@@ -1,9 +1,10 @@
 {
     "measurements": "Measurements",
     "overview": "Overview",
+    "medication": "Medication",
     "options": "Options",
 
-    "addNewEntry": "Add new entry",
+    "addEntry": "Add new entry",
     "editEntry": "Edit entry",
 
     "cancel": "Cancel",

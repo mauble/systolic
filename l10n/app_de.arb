@@ -1,9 +1,10 @@
 {
     "measurements": "Messungen",
     "overview": "Übersicht",
+    "medication": "Medikamente",
     "options": "Optionen",
 
-    "addNewEntry": "Eintrag hinzufügen",
+    "addEntry": "Eintrag hinzufügen",
     "editEntry": "Eintrag bearbeiten",
 
     "cancel": "Abbrechen",
