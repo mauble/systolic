@@ -17,7 +17,9 @@ class AppDrawer extends StatelessWidget {
       child: Column(
         children: [
           const Padding(
-            padding: EdgeInsets.only(bottom: 90),
+            padding: EdgeInsets.only(
+              bottom: 100,
+            ),
             child: DrawerHeader(
               child: Icon(Icons.monitor_heart),
             ),
