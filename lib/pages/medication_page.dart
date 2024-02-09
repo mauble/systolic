@@ -1,41 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-import 'package:systolic/components/app_drawer.dart';
+import 'package:systolic/components/page_template.dart';
 
 class MedicationPage extends StatelessWidget {
   const MedicationPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      drawer: const AppDrawer(),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(bottom: 20, left: 18),
-            child: Text(
-              AppLocalizations.of(context)!.medication,
-              style: GoogleFonts.dmSerifText(
-                fontSize: 36,
-              ),
+    return PageTemplate(
+      pageTitle: AppLocalizations.of(context)!.medication,
+      pageContent: SizedBox(
+        height: MediaQuery.of(context).size.height * 0.6,
+        child: const Center(
+          child: Text(
+            'Work in Progress.',
+            style: TextStyle(
+              fontSize: 15,
             ),
           ),
-          SizedBox(
-            height: MediaQuery.of(context).size.height * 0.6,
-            child: const Center(
-              child: Text(
-                'Work in Progress.',
-                style: TextStyle(
-                  fontSize: 15,
-                ),
-              ),
-            ),
-          )
-        ],
+        ),
       ),
     );
   }

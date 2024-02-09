@@ -2,13 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'package:systolic/models/entry/entry.dart';
 import 'package:systolic/models/entry/entry_database.dart';
 import 'package:systolic/components/entry_tile.dart';
-import 'package:systolic/components/app_drawer.dart';
+import 'package:systolic/components/page_template.dart';
 
 class EntriesPage extends StatefulWidget {
   const EntriesPage({super.key});
@@ -169,86 +168,70 @@ class _EntriesPageState extends State<EntriesPage> {
 
     Map<String, List<Entry>> groupedEntries = groupEntriesByDay(currentEntries);
 
-    return Scaffold(
+    return PageTemplate(
       floatingActionButton: FloatingActionButton(
         onPressed: createEntry,
         child: const Icon(Icons.add),
       ),
-      appBar: AppBar(),
-      drawer: const AppDrawer(),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(bottom: 20, left: 18),
-            child: Text(
-              AppLocalizations.of(context)!.measurements,
-              style: GoogleFonts.dmSerifText(
-                fontSize: 36,
-              ),
-            ),
-          ),
-          currentEntries.isEmpty
-              ? SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.6,
-                  child: Center(
-                    child: Padding(
-                      padding: const EdgeInsets.only(
-                        left: 25,
-                        right: 25,
-                      ),
-                      child: Text(
-                        AppLocalizations.of(context)!.welcome,
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(
-                          fontSize: 15,
-                        ),
-                      ),
+      pageTitle: AppLocalizations.of(context)!.measurements,
+      pageContent: currentEntries.isEmpty
+          ? SizedBox(
+              height: MediaQuery.of(context).size.height * 0.6,
+              child: Center(
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                    left: 25,
+                    right: 25,
+                  ),
+                  child: Text(
+                    AppLocalizations.of(context)!.welcome,
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(
+                      fontSize: 15,
                     ),
                   ),
-                )
-              : Expanded(
-                  child: ListView.builder(
-                    itemCount: groupedEntries.length,
-                    itemBuilder: (context, index) {
-                      final List<String> keys = groupedEntries.keys.toList();
-                      final String dayKey = keys[index];
-                      final List<Entry> entries =
-                          sortEntriesByTime(groupedEntries[dayKey]!);
-
-                      return Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Padding(
-                            padding:
-                                const EdgeInsets.only(bottom: 20, left: 18),
-                            child: Text(
-                              dayKey,
-                              style: const TextStyle(
-                                fontSize: 22,
-                              ),
-                            ),
-                          ),
-                          ListView.builder(
-                            shrinkWrap: true,
-                            physics: const NeverScrollableScrollPhysics(),
-                            itemCount: entries.length,
-                            itemBuilder: (context, index) {
-                              final entry = entries[index];
-                              return EntryTile(
-                                entry: entry,
-                                onEditTap: () => updateEntry(entry),
-                                onDeleteTap: () => deleteEntry(entry.id),
-                              );
-                            },
-                          ),
-                        ],
-                      );
-                    },
-                  ),
                 ),
-        ],
-      ),
+              ),
+            )
+          : Expanded(
+              child: ListView.builder(
+                itemCount: groupedEntries.length,
+                itemBuilder: (context, index) {
+                  final List<String> keys = groupedEntries.keys.toList();
+                  final String dayKey = keys[index];
+                  final List<Entry> entries =
+                      sortEntriesByTime(groupedEntries[dayKey]!);
+
+                  return Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 20, left: 18),
+                        child: Text(
+                          dayKey,
+                          style: const TextStyle(
+                            fontSize: 22,
+                          ),
+                        ),
+                      ),
+                      ListView.builder(
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemCount: entries.length,
+                        itemBuilder: (context, index) {
+                          final entry = entries[index];
+                          return EntryTile(
+                            entry: entry,
+                            onEditTap: () => updateEntry(entry),
+                            onDeleteTap: () => deleteEntry(entry.id),
+                          );
+                        },
+                      ),
+                    ],
+                  );
+                },
+              ),
+            ),
     );
   }
 }
