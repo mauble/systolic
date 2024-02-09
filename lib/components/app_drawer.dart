@@ -16,11 +16,11 @@ class AppDrawer extends StatelessWidget {
       backgroundColor: Theme.of(context).colorScheme.background,
       child: Column(
         children: [
-          const Padding(
+          Padding(
             padding: EdgeInsets.only(
-              bottom: 100,
+              bottom: MediaQuery.of(context).size.height * 0.11,
             ),
-            child: DrawerHeader(
+            child: const DrawerHeader(
               child: Icon(Icons.monitor_heart),
             ),
           ),
