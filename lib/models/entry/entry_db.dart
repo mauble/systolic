@@ -4,7 +4,7 @@ import 'package:isar/isar.dart';
 
 import 'package:systolic/models/entry/entry.dart';
 
-class EntryDatabase extends ChangeNotifier {
+class EntryDB extends ChangeNotifier {
   static late Isar isar;
   final List<Entry> currentEntries = [];
 

@@ -5,18 +5,18 @@ import 'package:system_theme/system_theme.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-import 'package:systolic/models/entry/entry_database.dart';
+import 'package:systolic/models/entry/entry_db.dart';
 import 'package:systolic/pages/entries_page.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await EntryDatabase.initialize();
+  await EntryDB.initialize();
   SystemTheme.fallbackColor = Colors.grey;
   await SystemTheme.accentColor.load();
 
   runApp(
     ChangeNotifierProvider(
-      create: (context) => EntryDatabase(),
+      create: (context) => EntryDB(),
       child: const MyApp(),
     ),
   );

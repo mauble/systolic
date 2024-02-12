@@ -5,7 +5,7 @@ import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'package:systolic/models/entry/entry.dart';
-import 'package:systolic/models/entry/entry_database.dart';
+import 'package:systolic/models/entry/entry_db.dart';
 import 'package:systolic/components/entry_tile.dart';
 import 'package:systolic/components/page_template.dart';
 
@@ -24,7 +24,7 @@ class _EntriesPageState extends State<EntriesPage> {
   @override
   void initState() {
     super.initState();
-    context.read<EntryDatabase>().fetchEntries();
+    context.read<EntryDB>().fetchEntries();
   }
 
   void cancelDialog() {
@@ -40,7 +40,7 @@ class _EntriesPageState extends State<EntriesPage> {
     int pulse = int.tryParse(pulseController.text) ?? 0;
 
     if (systole != 0 && diastole != 0 && pulse != 0) {
-      context.read<EntryDatabase>().updateEntry(id, systole, diastole, pulse);
+      context.read<EntryDB>().updateEntry(id, systole, diastole, pulse);
       cancelDialog();
     }
   }
@@ -51,7 +51,7 @@ class _EntriesPageState extends State<EntriesPage> {
     int pulse = int.tryParse(pulseController.text) ?? 0;
 
     if (systole != 0 && diastole != 0 && pulse != 0) {
-      context.read<EntryDatabase>().addEntry(systole, diastole, pulse);
+      context.read<EntryDB>().addEntry(systole, diastole, pulse);
       cancelDialog();
     }
   }
@@ -133,7 +133,7 @@ class _EntriesPageState extends State<EntriesPage> {
   }
 
   void deleteEntry(int id) {
-    context.read<EntryDatabase>().deleteEntry(id);
+    context.read<EntryDB>().deleteEntry(id);
   }
 
   List<Entry> sortEntriesByTime(List<Entry> entries) {
@@ -162,7 +162,7 @@ class _EntriesPageState extends State<EntriesPage> {
 
   @override
   Widget build(BuildContext context) {
-    final entryDatabase = context.watch<EntryDatabase>();
+    final entryDatabase = context.watch<EntryDB>();
 
     List<Entry> currentEntries = entryDatabase.currentEntries;
 
