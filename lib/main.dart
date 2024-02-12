@@ -1,3 +1,4 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -30,6 +31,26 @@ Future<void> main() async {
   );
 }
 
+String? getFont(bool serif) {
+  switch (PlatformDispatcher.instance.locale.languageCode) {
+    case "zh":
+      if (serif) {
+        return GoogleFonts.notoSerifHk().fontFamily;
+      }
+    case "ja":
+      if (serif) {
+        return GoogleFonts.zenAntique().fontFamily;
+      }
+    case "ko":
+      if (serif) {
+        return GoogleFonts.songMyung().fontFamily;
+      }
+  }
+  return serif
+      ? GoogleFonts.playfairDisplay().fontFamily
+      : GoogleFonts.interTight().fontFamily;
+}
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -56,7 +77,7 @@ class MyApp extends StatelessWidget {
           seedColor: SystemTheme.accentColor.accent,
           brightness: brightness,
         ),
-        fontFamily: GoogleFonts.figtree().fontFamily,
+        fontFamily: getFont(false),
         appBarTheme: AppBarTheme(
           systemOverlayStyle: SystemUiOverlayStyle(
             statusBarBrightness: statusBarText,
