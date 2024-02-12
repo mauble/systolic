@@ -6,6 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'package:systolic/models/entry/entry_db.dart';
+import 'package:systolic/models/medicine/medicine_db.dart';
 import 'package:systolic/pages/entries_page.dart';
 
 Future<void> main() async {
@@ -15,8 +16,15 @@ Future<void> main() async {
   await SystemTheme.accentColor.load();
 
   runApp(
-    ChangeNotifierProvider(
-      create: (context) => EntryDB(),
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => EntryDB(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => MedicineDB(),
+        ),
+      ],
       child: const MyApp(),
     ),
   );
