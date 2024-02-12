@@ -6,7 +6,7 @@ import 'package:systolic/models/entry/entry.dart';
 
 class EntryDB extends ChangeNotifier {
   static late Isar isar;
-  final List<Entry> currentEntries = [];
+  final List<Entry> content = [];
 
   static Future<void> initialize() async {
     final dir = await getApplicationDocumentsDirectory();
@@ -16,14 +16,14 @@ class EntryDB extends ChangeNotifier {
     );
   }
 
-  Future<void> fetchEntries() async {
-    List<Entry> fetchedEntries = await isar.entrys.where().findAll();
-    currentEntries.clear();
-    currentEntries.addAll(fetchedEntries);
+  Future<void> fetch() async {
+    List<Entry> fetched = await isar.entrys.where().findAll();
+    content.clear();
+    content.addAll(fetched);
     notifyListeners();
   }
 
-  Future<void> addEntry(int systole, int diastole, int pulse) async {
+  Future<void> add(int systole, int diastole, int pulse) async {
     final newEntry = Entry()
       ..systole = systole
       ..diastole = diastole
@@ -31,22 +31,22 @@ class EntryDB extends ChangeNotifier {
       ..time = DateTime.now().millisecondsSinceEpoch;
     await isar.writeTxn(() => isar.entrys.put(newEntry));
 
-    fetchEntries();
+    fetch();
   }
 
-  Future<void> updateEntry(int id, int systole, int diastole, int pulse) async {
+  Future<void> update(int id, int systole, int diastole, int pulse) async {
     final existingEntry = await isar.entrys.get(id);
     if (existingEntry != null) {
       existingEntry.systole = systole;
       existingEntry.diastole = diastole;
       existingEntry.pulse = pulse;
       await isar.writeTxn(() => isar.entrys.put(existingEntry));
-      await fetchEntries();
+      await fetch();
     }
   }
 
-  Future<void> deleteEntry(int id) async {
+  Future<void> delete(int id) async {
     await isar.writeTxn(() => isar.entrys.delete(id));
-    await fetchEntries();
+    await fetch();
   }
 }

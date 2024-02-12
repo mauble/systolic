@@ -24,7 +24,7 @@ class _EntriesPageState extends State<EntriesPage> {
   @override
   void initState() {
     super.initState();
-    context.read<EntryDB>().fetchEntries();
+    context.read<EntryDB>().fetch();
   }
 
   void cancelDialog() {
@@ -40,7 +40,7 @@ class _EntriesPageState extends State<EntriesPage> {
     int pulse = int.tryParse(pulseController.text) ?? 0;
 
     if (systole != 0 && diastole != 0 && pulse != 0) {
-      context.read<EntryDB>().updateEntry(id, systole, diastole, pulse);
+      context.read<EntryDB>().update(id, systole, diastole, pulse);
       cancelDialog();
     }
   }
@@ -51,7 +51,7 @@ class _EntriesPageState extends State<EntriesPage> {
     int pulse = int.tryParse(pulseController.text) ?? 0;
 
     if (systole != 0 && diastole != 0 && pulse != 0) {
-      context.read<EntryDB>().addEntry(systole, diastole, pulse);
+      context.read<EntryDB>().add(systole, diastole, pulse);
       cancelDialog();
     }
   }
@@ -133,7 +133,7 @@ class _EntriesPageState extends State<EntriesPage> {
   }
 
   void deleteEntry(int id) {
-    context.read<EntryDB>().deleteEntry(id);
+    context.read<EntryDB>().delete(id);
   }
 
   List<Entry> sortEntriesByTime(List<Entry> entries) {
@@ -164,7 +164,7 @@ class _EntriesPageState extends State<EntriesPage> {
   Widget build(BuildContext context) {
     final entryDatabase = context.watch<EntryDB>();
 
-    List<Entry> currentEntries = entryDatabase.currentEntries;
+    List<Entry> currentEntries = entryDatabase.content;
 
     Map<String, List<Entry>> groupedEntries = groupEntriesByDay(currentEntries);
 
