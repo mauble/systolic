@@ -29,7 +29,6 @@ class MedicineDB extends ChangeNotifier {
       ..dosage = dosage
       ..time = DateTime.now().millisecondsSinceEpoch;
     await isar.writeTxn(() => isar.medicines.put(newMedicine));
-
     fetch();
   }
 

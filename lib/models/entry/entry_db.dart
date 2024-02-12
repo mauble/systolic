@@ -30,7 +30,6 @@ class EntryDB extends ChangeNotifier {
       ..pulse = pulse
       ..time = DateTime.now().millisecondsSinceEpoch;
     await isar.writeTxn(() => isar.entrys.put(newEntry));
-
     fetch();
   }
 
