@@ -12,9 +12,11 @@ import 'package:systolic/pages/entries_page.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await EntryDB.initialize();
   SystemTheme.fallbackColor = Colors.grey;
   await SystemTheme.accentColor.load();
+
+  await EntryDB.initialize();
+  await MedicineDB.initialize();
 
   runApp(
     MultiProvider(
@@ -32,22 +34,20 @@ Future<void> main() async {
 }
 
 String? getFont(bool serif) {
-  switch (PlatformDispatcher.instance.locale.languageCode) {
-    case "zh":
-      if (serif) {
+  if (serif) {
+    switch (PlatformDispatcher.instance.locale.languageCode) {
+      case "zh":
         return GoogleFonts.notoSerifHk().fontFamily;
-      }
-    case "ja":
-      if (serif) {
+      case "ja":
         return GoogleFonts.zenAntique().fontFamily;
-      }
-    case "ko":
-      if (serif) {
+      case "ko":
         return GoogleFonts.songMyung().fontFamily;
-      }
+      case "ru":
+        return GoogleFonts.playfairDisplay().fontFamily;
+    }
   }
   return serif
-      ? GoogleFonts.playfairDisplay().fontFamily
+      ? GoogleFonts.dmSerifText().fontFamily
       : GoogleFonts.interTight().fontFamily;
 }
 
