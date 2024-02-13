@@ -6,8 +6,8 @@ part 'entry.g.dart';
 @Collection()
 class Entry {
   Id id = Isar.autoIncrement;
+  late int time;
   late int systole;
   late int diastole;
   late int pulse;
-  late int time;
 }

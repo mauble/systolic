@@ -16,7 +16,7 @@
     "diastole": "이완기",
     "pulse": "심박수",
 
-    "welcome": "Systolic 에 오신 것을 환영합니다.\n\n먼저 혈압을 측정하고 아래 버튼을 눌러 값을 입력하세요.",
+    "noEntry": "Systolic 에 오신 것을 환영합니다.\n\n먼저 혈압을 측정하고 아래 버튼을 눌러 값을 입력하세요.",
 
     "dateFormat": "mm/dd/yyyy",
     "timeFormat": "hh:mm a"

@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:popover/popover.dart';
-import 'package:intl/intl.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:systolic/main.dart';
 
-import 'package:systolic/models/entry/entry.dart';
+import 'package:systolic/models/medication/medication.dart';
 import 'package:systolic/components/tile_popover.dart';
 
-class EntryTile extends StatelessWidget {
-  final Entry entry;
+class MedicationTile extends StatelessWidget {
+  final Medication entry;
   final void Function()? onEditTap;
   final void Function()? onDeleteTap;
 
-  const EntryTile(
+  const MedicationTile(
       {super.key,
       required this.entry,
       required this.onEditTap,
@@ -29,15 +27,14 @@ class EntryTile extends StatelessWidget {
       child: ListTile(
         contentPadding: const EdgeInsets.only(left: 21, right: 19, bottom: 2),
         title: Text(
-          '${entry.systole}・${entry.diastole}・${entry.pulse}',
+          entry.name,
           style: TextStyle(
             fontSize: 21,
-            fontFamily: GoogleFonts.chivoMono().fontFamily,
+            fontFamily: getFont(false),
           ),
         ),
         subtitle: Text(
-          DateFormat(AppLocalizations.of(context)!.timeFormat)
-              .format(DateTime.fromMillisecondsSinceEpoch(entry.time)),
+          '${entry.dosage} ${entry.unit}',
           style: const TextStyle(
             fontSize: 17,
           ),

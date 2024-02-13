@@ -16,7 +16,7 @@
     "diastole": "舒張壓",
     "pulse": "脈搏",
 
-    "welcome": "歡迎使用「Systolic」。\n\n您僅需測量您的血壓，並點擊下方按鈕輸入您的結果以開始。",
+    "noEntry": "歡迎使用「Systolic」。\n\n您僅需測量您的血壓，並點擊下方按鈕輸入您的結果以開始。",
 
     "dateFormat": "yyyy年MM月dd日",
     "timeFormat": "hh:mm a"

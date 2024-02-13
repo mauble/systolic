@@ -7,16 +7,17 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'package:systolic/models/entry/entry_db.dart';
-import 'package:systolic/models/medicine/medicine_db.dart';
+import 'package:systolic/models/medication/medication_db.dart';
 import 'package:systolic/pages/entries_page.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  SystemTheme.fallbackColor = Colors.grey;
-  await SystemTheme.accentColor.load();
 
   await EntryDB.initialize();
-  await MedicineDB.initialize();
+  await MedicationDB.initialize();
+
+  SystemTheme.fallbackColor = Colors.grey;
+  await SystemTheme.accentColor.load();
 
   runApp(
     MultiProvider(
@@ -25,7 +26,7 @@ Future<void> main() async {
           create: (context) => EntryDB(),
         ),
         ChangeNotifierProvider(
-          create: (context) => MedicineDB(),
+          create: (context) => MedicationDB(),
         ),
       ],
       child: const MyApp(),
@@ -34,21 +35,27 @@ Future<void> main() async {
 }
 
 String? getFont(bool serif) {
-  if (serif) {
-    switch (PlatformDispatcher.instance.locale.languageCode) {
-      case "zh":
+  switch (PlatformDispatcher.instance.locale.languageCode) {
+    case "zh":
+      if (serif) {
         return GoogleFonts.notoSerifHk().fontFamily;
-      case "ja":
+      }
+    case "ja":
+      if (serif) {
         return GoogleFonts.zenAntique().fontFamily;
-      case "ko":
+      }
+    case "ko":
+      if (serif) {
         return GoogleFonts.songMyung().fontFamily;
-      case "ru":
-        return GoogleFonts.playfairDisplay().fontFamily;
-    }
+      }
+    case "ru":
+      return serif
+          ? GoogleFonts.charisSil().fontFamily
+          : GoogleFonts.interTight().fontFamily;
   }
   return serif
-      ? GoogleFonts.dmSerifText().fontFamily
-      : GoogleFonts.interTight().fontFamily;
+      ? GoogleFonts.dmSerifDisplay().fontFamily
+      : GoogleFonts.dmSans().fontFamily;
 }
 
 class MyApp extends StatelessWidget {

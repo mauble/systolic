@@ -184,7 +184,7 @@ class _EntriesPageState extends State<EntriesPage> {
                     right: 25,
                   ),
                   child: Text(
-                    AppLocalizations.of(context)!.welcome,
+                    AppLocalizations.of(context)!.noEntry,
                     textAlign: TextAlign.center,
                     style: const TextStyle(
                       fontSize: 15,

@@ -16,7 +16,7 @@
     "diastole": "拡張期",
     "pulse": "脈拍",
 
-    "welcome": "「Systolic」へようこそ。\n\n始めに血圧を測定し、下のボタンをタップして値を入力してください。",
+    "noEntry": "「Systolic」へようこそ。\n\n始めに血圧を測定し、下のボタンをタップして値を入力してください。",
 
     "dateFormat": "yyyy年MM月dd日",
     "timeFormat": "hh:mm a"

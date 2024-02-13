@@ -1,8 +1,7 @@
 {
     "measurements": "Measurements",
-    "overview": "Overview",
-    "medication": "Medication",
-    "options": "Options",
+
+    "noEntry": "Welcome to Systolic.\n\nTo start, just measure your blood pressure and enter your results by clicking the button below.",
 
     "addEntry": "Add new entry",
     "editEntry": "Edit entry",
@@ -16,7 +15,20 @@
     "diastole": "Diastole",
     "pulse": "Pulse",
 
-    "welcome": "Welcome to Systolic.\n\nTo start, just measure your blood pressure and enter your results by clicking the button below.",
+    "overview": "Overview",
+
+    "medication": "Medication",
+
+    "noMedication": "No medication available.\n\nPlease add medicine by clicking the button below.",
+
+    "addMedication": "Add new medicine",
+    "editMedication": "Edit medicine",
+
+    "name": "Name",
+    "dosage": "Dosage",
+    "unit": "Unit",
+
+    "options": "Options",
 
     "dateFormat": "MM/dd/yyyy",
     "timeFormat": "hh:mm a"

@@ -12,6 +12,7 @@ class EntryDB extends ChangeNotifier {
     final dir = await getApplicationDocumentsDirectory();
     isar = await Isar.open(
       [EntrySchema],
+      name: 'EntrySchema',
       directory: dir.path,
     );
   }
@@ -25,12 +26,12 @@ class EntryDB extends ChangeNotifier {
 
   Future<void> add(int systole, int diastole, int pulse) async {
     final newEntry = Entry()
+      ..time = DateTime.now().millisecondsSinceEpoch
       ..systole = systole
       ..diastole = diastole
-      ..pulse = pulse
-      ..time = DateTime.now().millisecondsSinceEpoch;
+      ..pulse = pulse;
     await isar.writeTxn(() => isar.entrys.put(newEntry));
-    fetch();
+    await fetch();
   }
 
   Future<void> update(int id, int systole, int diastole, int pulse) async {
