@@ -35,27 +35,21 @@ Future<void> main() async {
 }
 
 String? getFont(bool serif) {
-  switch (PlatformDispatcher.instance.locale.languageCode) {
-    case "zh":
-      if (serif) {
+  if (serif) {
+    switch (PlatformDispatcher.instance.locale.languageCode) {
+      case "zh":
         return GoogleFonts.notoSerifHk().fontFamily;
-      }
-    case "ja":
-      if (serif) {
+      case "ja":
         return GoogleFonts.zenAntique().fontFamily;
-      }
-    case "ko":
-      if (serif) {
+      case "ko":
         return GoogleFonts.songMyung().fontFamily;
-      }
-    case "ru":
-      return serif
-          ? GoogleFonts.charisSil().fontFamily
-          : GoogleFonts.interTight().fontFamily;
+      case "ru":
+        return GoogleFonts.charisSil().fontFamily;
+    }
   }
   return serif
       ? GoogleFonts.dmSerifDisplay().fontFamily
-      : GoogleFonts.dmSans().fontFamily;
+      : GoogleFonts.interTight().fontFamily;
 }
 
 class MyApp extends StatelessWidget {
