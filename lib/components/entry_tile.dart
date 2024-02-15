@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:popover/popover.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -30,9 +29,9 @@ class EntryTile extends StatelessWidget {
         contentPadding: const EdgeInsets.only(left: 21, right: 19, bottom: 2),
         title: Text(
           '${entry.systole}・${entry.diastole}・${entry.pulse}',
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 21,
-            fontFamily: GoogleFonts.chivoMono().fontFamily,
+            fontFamily: 'ChivoMono',
           ),
         ),
         subtitle: Text(

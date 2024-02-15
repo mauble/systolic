@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:system_theme/system_theme.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'package:systolic/models/entry/entry_db.dart';
@@ -36,20 +35,18 @@ Future<void> main() async {
 
 String? getFont(bool serif) {
   if (serif) {
-    switch (PlatformDispatcher.instance.locale.languageCode) {
-      case "zh":
-        return GoogleFonts.notoSerifHk().fontFamily;
-      case "ja":
-        return GoogleFonts.zenAntique().fontFamily;
-      case "ko":
-        return GoogleFonts.songMyung().fontFamily;
-      case "ru":
-        return GoogleFonts.charisSil().fontFamily;
+    switch (PlatformDispatcher.instance.locale.countryCode) {
+      case "CN":
+        return 'NotoSerifSC';
+      case "TW":
+        return 'NotoSerifTC';
+      case "JP":
+        return 'NotoSerifJP';
+      case "KR":
+        return 'NotoSerifKR';
     }
   }
-  return serif
-      ? GoogleFonts.dmSerifDisplay().fontFamily
-      : GoogleFonts.interTight().fontFamily;
+  return serif ? 'CharisSIL' : 'InterTight';
 }
 
 class MyApp extends StatelessWidget {

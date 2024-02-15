@@ -16,14 +16,10 @@ class AppDrawer extends StatelessWidget {
       backgroundColor: Theme.of(context).colorScheme.background,
       child: Column(
         children: [
-          Padding(
-            padding: EdgeInsets.only(
-              bottom: MediaQuery.of(context).size.height * 0.11,
-            ),
-            child: const DrawerHeader(
-              child: Icon(Icons.monitor_heart),
-            ),
+          const DrawerHeader(
+            child: Icon(Icons.monitor_heart),
           ),
+          const Spacer(),
           DrawerTile(
             title: AppLocalizations.of(context)!.measurements,
             leading: const Icon(Icons.bar_chart),
@@ -75,6 +71,16 @@ class AppDrawer extends StatelessWidget {
                 ),
               );
             },
+          ),
+          const Spacer(),
+          const Visibility(
+            maintainSize: true,
+            maintainAnimation: true,
+            maintainState: true,
+            visible: false,
+            child: DrawerHeader(
+              child: null,
+            ),
           ),
         ],
       ),
