@@ -31,6 +31,7 @@ class PageTemplate extends StatelessWidget {
               style: TextStyle(
                 fontFamily: getFont(true),
                 fontSize: 32,
+                fontWeight: FontWeight.bold,
               ),
             ),
           ),
