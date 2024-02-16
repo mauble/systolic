@@ -1,8 +1,7 @@
 {
     "measurements": "Messungen",
-    "overview": "Übersicht",
-    "medication": "Medikamente",
-    "options": "Optionen",
+
+    "noEntry": "Willkommen bei Systolic.\n\nMessen Sie Ihren Blutdruck und tragen Sie Ihre Werte ein, indem Sie auf den Button unten tippen.",
 
     "addEntry": "Eintrag hinzufügen",
     "editEntry": "Eintrag bearbeiten",
@@ -16,7 +15,20 @@
     "diastole": "Diastole",
     "pulse": "Puls",
 
-    "noEntry": "Willkommen bei Systolic.\n\nMessen Sie Ihren Blutdruck und tragen Sie Ihre Werte ein, indem Sie auf den Knopf unten tippen.",
+    "overview": "Übersicht",
+
+    "medication": "Medikamente",
+
+    "noMedication": "Keine Medikamente verfügbar.\n\nTragen sie Ihre Medikamente ein, indem Sie auf den Button unten tippen.",
+
+    "addMedication": "Medizin hinzufügen",
+    "editMedication": "Medizin bearbeiten",
+
+    "name": "Name",
+    "dosage": "Dosis",
+    "unit": "Einheit",
+
+    "options": "Optionen",
 
     "dateFormat": "dd.MM.yyyy",
     "timeFormat": "HH:mm"

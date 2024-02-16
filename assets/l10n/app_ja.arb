@@ -1,8 +1,7 @@
 {
     "measurements": "計測",
-    "overview": "概要",
-    "medication": "薬",
-    "options": "オプション",
+
+    "noEntry": "Systolicへようこそ。\n\n始めに血圧を測定し、下のボタンをタップして値を入力してください。",
 
     "addEntry": "測定結果を追加",
     "editEntry": "測定結果を編集",
@@ -16,7 +15,20 @@
     "diastole": "拡張期",
     "pulse": "脈拍",
 
-    "noEntry": "「Systolic」へようこそ。\n\n始めに血圧を測定し、下のボタンをタップして値を入力してください。",
+    "overview": "概要",
+
+    "medication": "薬",
+
+    "noMedication": "薬はありません。\n\n下のボタンをタップして薬を追加してください。",
+
+    "addMedication": "薬を追加",
+    "editMedication": "薬を編集",
+
+    "name": "名前",
+    "dosage": "用量",
+    "unit": "単位",
+
+    "options": "オプション",
 
     "dateFormat": "yyyy年MM月dd日",
     "timeFormat": "hh:mm a"

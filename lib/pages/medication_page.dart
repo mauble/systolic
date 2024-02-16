@@ -38,7 +38,7 @@ class _MedicationPageState extends State<MedicationPage> {
     int dosage = int.tryParse(dosageController.text) ?? 0;
     String unit = unitController.text;
 
-    if (name != '' && unit != '' && dosage != 0) {
+    if (name != '' && dosage != 0 && unit != '') {
       context.read<MedicationDB>().update(id, name, dosage, unit);
       cancelDialog();
     }
@@ -49,7 +49,7 @@ class _MedicationPageState extends State<MedicationPage> {
     int dosage = int.tryParse(dosageController.text) ?? 0;
     String unit = unitController.text;
 
-    if (name != '' && unit != '' && dosage != 0) {
+    if (name != '' && dosage != 0 && unit != '') {
       context.read<MedicationDB>().add(name, dosage, unit);
       cancelDialog();
     }
@@ -110,6 +110,7 @@ class _MedicationPageState extends State<MedicationPage> {
   void updateEntry(Medication medication) {
     nameController.text = medication.name;
     dosageController.text = medication.dosage.toString();
+    unitController.text = medication.unit;
 
     entryDialog(
         AppLocalizations.of(context)!.editMedication,
