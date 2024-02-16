@@ -21,11 +21,11 @@ class MedicationTile extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.surfaceVariant,
-        borderRadius: BorderRadius.circular(15),
+        borderRadius: BorderRadius.circular(16),
       ),
       margin: const EdgeInsets.only(bottom: 20, left: 15, right: 15),
       child: ListTile(
-        contentPadding: const EdgeInsets.only(left: 21, right: 19, bottom: 2),
+        contentPadding: const EdgeInsets.only(left: 17, right: 12, bottom: 3),
         title: Text(
           entry.name,
           style: TextStyle(
@@ -42,9 +42,8 @@ class MedicationTile extends StatelessWidget {
         trailing: Builder(
           builder: (context) => GestureDetector(
             onTap: () => showPopover(
-              width: 90,
-              height: 100,
               context: context,
+              height: 100,
               backgroundColor: Theme.of(context).colorScheme.background,
               bodyBuilder: (context) => EntryPopover(
                 onEditTap: onEditTap,

@@ -25,12 +25,12 @@ class PageTemplate extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.only(bottom: 20, left: 16),
+            padding: const EdgeInsets.only(bottom: 25, left: 17),
             child: Text(
               pageTitle,
               style: TextStyle(
                 fontFamily: getFont(true),
-                fontSize: 34,
+                fontSize: 32,
               ),
             ),
           ),

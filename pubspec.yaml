@@ -30,6 +30,15 @@ flutter:
   generate: true
   uses-material-design: true
   fonts:
+    - family: ChivoMono
+      fonts:
+        - asset: assets/fonts/ChivoMono-Regular.ttf
+    - family: InterTight
+      fonts:
+        - asset: assets/fonts/InterTight-Regular.ttf
+    - family: Tinos
+      fonts:
+        - asset: assets/fonts/Tinos-Regular.ttf
     - family: NotoSerifSC
       fonts:
         - asset: assets/fonts/NotoSerifSC-Regular.otf
@@ -42,12 +51,3 @@ flutter:
     - family: NotoSerifKR
       fonts:
         - asset: assets/fonts/NotoSerifKR-Regular.otf
-    - family: CharisSIL
-      fonts:
-        - asset: assets/fonts/CharisSIL-Regular.ttf
-    - family: InterTight
-      fonts:
-        - asset: assets/fonts/InterTight-Regular.ttf
-    - family: ChivoMono
-      fonts:
-        - asset: assets/fonts/ChivoMono-Regular.ttf

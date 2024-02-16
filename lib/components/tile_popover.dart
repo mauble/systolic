@@ -17,27 +17,51 @@ class EntryPopover extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        GestureDetector(
-          onTap: () {
-            Navigator.pop(context);
-            onEditTap!();
-          },
-          child: SizedBox(
-            height: buttonHeight,
-            child: Center(child: Text(AppLocalizations.of(context)!.edit)),
-          ),
-        ),
-        GestureDetector(
-          onTap: () {
-            Navigator.pop(context);
-            onDeleteTap!();
-          },
-          child: SizedBox(
-            height: buttonHeight,
-            child: Center(child: Text(AppLocalizations.of(context)!.delete)),
-          ),
-        ),
+        buildButton(context, AppLocalizations.of(context)!.edit, onEditTap),
+        buildButton(context, AppLocalizations.of(context)!.delete, onDeleteTap),
       ],
     );
+  }
+
+  Widget buildButton(
+      BuildContext context, String buttonText, void Function()? onTap) {
+    double maxWidth = calculateMaxButtonWidth(context);
+    return GestureDetector(
+      onTap: () {
+        Navigator.pop(context);
+        onTap!();
+      },
+      child: SizedBox(
+        width: maxWidth,
+        height: buttonHeight,
+        child: Center(
+          child: Text(
+            buttonText,
+            style: const TextStyle(
+              fontSize: 15,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  double calculateMaxButtonWidth(BuildContext context) {
+    final editButtonWidth =
+        calculateTextWidth(AppLocalizations.of(context)!.edit);
+    final deleteButtonWidth =
+        calculateTextWidth(AppLocalizations.of(context)!.delete);
+
+    return editButtonWidth > deleteButtonWidth
+        ? editButtonWidth
+        : deleteButtonWidth;
+  }
+
+  double calculateTextWidth(String text) {
+    final TextPainter textPainter = TextPainter(
+      text: TextSpan(text: text),
+      textDirection: TextDirection.ltr,
+    )..layout();
+    return textPainter.width + 40;
   }
 }

@@ -46,7 +46,7 @@ String? getFont(bool serif) {
         return 'NotoSerifKR';
     }
   }
-  return serif ? 'CharisSIL' : 'InterTight';
+  return serif ? 'Tinos' : 'InterTight';
 }
 
 class MyApp extends StatelessWidget {
