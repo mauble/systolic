@@ -3,7 +3,7 @@ import 'package:popover/popover.dart';
 import 'package:systolic/main.dart';
 
 import 'package:systolic/models/medication/medication.dart';
-import 'package:systolic/components/tile_popover.dart';
+import 'package:systolic/components/popover_template.dart';
 
 class MedicationTile extends StatelessWidget {
   final Medication entry;

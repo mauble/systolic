@@ -4,7 +4,7 @@ import 'package:intl/intl.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'package:systolic/models/entry/entry.dart';
-import 'package:systolic/components/tile_popover.dart';
+import 'package:systolic/components/popover_template.dart';
 
 class EntryTile extends StatelessWidget {
   final Entry entry;
