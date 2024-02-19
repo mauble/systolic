@@ -203,20 +203,30 @@ class _EntriesPageState extends State<EntriesPage> {
                       sortEntriesByTime(groupedEntries[dayKey]!);
 
                   return Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(
-                          bottom: 20,
-                          left: 18,
-                        ),
-                        child: Text(
-                          dayKey,
-                          style: const TextStyle(
-                            fontSize: 22,
+                          padding: const EdgeInsets.only(
+                            bottom: 20,
+                            left: 20,
+                            right: 20,
                           ),
-                        ),
-                      ),
+                          child: Row(children: <Widget>[
+                            const Expanded(child: Divider()),
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                left: 15,
+                                right: 15,
+                              ),
+                              child: Text(
+                                dayKey,
+                                style: const TextStyle(
+                                  fontSize: 22,
+                                ),
+                              ),
+                            ),
+                            const Expanded(child: Divider()),
+                          ])),
                       ListView.builder(
                         shrinkWrap: true,
                         physics: const NeverScrollableScrollPhysics(),

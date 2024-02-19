@@ -31,7 +31,6 @@ class EntryTile extends StatelessWidget {
           '${entry.systole}・${entry.diastole}・${entry.pulse}',
           style: const TextStyle(
             fontSize: 21,
-            fontFamily: 'ChivoMono',
           ),
         ),
         subtitle: Text(
