@@ -25,7 +25,7 @@ class PageTemplate extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.only(bottom: 25, left: 17),
+            padding: const EdgeInsets.only(bottom: 20, left: 17),
             child: Text(
               pageTitle,
               style: TextStyle(
