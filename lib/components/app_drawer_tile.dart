@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class DrawerTile extends StatelessWidget {
+class AppDrawerTile extends StatelessWidget {
   final String title;
   final Widget leading;
   final void Function()? onTap;
 
-  const DrawerTile({
+  const AppDrawerTile({
     super.key,
     required this.title,
     required this.leading,

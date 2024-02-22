@@ -20,7 +20,7 @@ class AppDrawer extends StatelessWidget {
             child: Icon(Icons.monitor_heart),
           ),
           const Spacer(),
-          DrawerTile(
+          AppDrawerTile(
             title: AppLocalizations.of(context)!.measurements,
             leading: const Icon(Icons.bar_chart),
             onTap: () {
@@ -33,7 +33,7 @@ class AppDrawer extends StatelessWidget {
               );
             },
           ),
-          DrawerTile(
+          AppDrawerTile(
             title: AppLocalizations.of(context)!.overview,
             leading: const Icon(Icons.text_snippet),
             onTap: () {
@@ -46,7 +46,7 @@ class AppDrawer extends StatelessWidget {
               );
             },
           ),
-          DrawerTile(
+          AppDrawerTile(
             title: AppLocalizations.of(context)!.medication,
             leading: const Icon(Icons.medication_rounded),
             onTap: () {
@@ -59,7 +59,7 @@ class AppDrawer extends StatelessWidget {
               );
             },
           ),
-          DrawerTile(
+          AppDrawerTile(
             title: AppLocalizations.of(context)!.options,
             leading: const Icon(Icons.settings),
             onTap: () {

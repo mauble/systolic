@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'package:systolic/components/page_template.dart';
+import 'package:systolic/components/options_tile.dart';
 
 class OptionsPage extends StatelessWidget {
   const OptionsPage({super.key});
@@ -10,15 +11,10 @@ class OptionsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return PageTemplate(
       pageTitle: AppLocalizations.of(context)!.options,
-      pageContent: SizedBox(
-        height: MediaQuery.of(context).size.height * 0.6,
-        child: const Center(
-          child: Text(
-            'Work in Progress.',
-            style: TextStyle(
-              fontSize: 15,
-            ),
-          ),
+      pageContent: const SizedBox(
+        child: OptionsTile(
+          id: 'placeholder',
+          title: 'Placeholder',
         ),
       ),
     );
