@@ -19,7 +19,7 @@
 
     "medication": "薬",
 
-    "noMedication": "薬はありません。\n\n下のボタンをタップして薬を追加してください。",
+    "noMedication": "薬はありません。\n下のボタンをタップして薬を追加してください。",
 
     "addMedication": "薬を追加",
     "editMedication": "薬を編集",

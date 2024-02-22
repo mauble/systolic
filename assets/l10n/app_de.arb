@@ -19,7 +19,7 @@
 
     "medication": "Medikamente",
 
-    "noMedication": "Keine Medikamente verfügbar.\n\nTragen sie Ihre Medikamente ein, indem Sie auf den Button unten tippen.",
+    "noMedication": "Keine Medikamente verfügbar.\nTragen sie Ihre Medikamente ein, indem Sie auf den Button unten tippen.",
 
     "addMedication": "Medizin hinzufügen",
     "editMedication": "Medizin bearbeiten",

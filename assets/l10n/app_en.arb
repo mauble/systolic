@@ -19,7 +19,7 @@
 
     "medication": "Medication",
 
-    "noMedication": "No medication available.\n\nPlease add medicine by clicking the button below.",
+    "noMedication": "No medication available.\nPlease add medicine by clicking the button below.",
 
     "addMedication": "Add new medicine",
     "editMedication": "Edit medicine",
