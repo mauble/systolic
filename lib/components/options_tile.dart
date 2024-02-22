@@ -26,21 +26,22 @@ class _OptionsTileState extends State<OptionsTile> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 20, left: 15, right: 15),
+      child: Material(
         color: Theme.of(context).colorScheme.surfaceVariant,
         borderRadius: BorderRadius.circular(16),
-      ),
-      margin: const EdgeInsets.only(bottom: 20, left: 15, right: 15),
-      child: SwitchListTile(
-        contentPadding: const EdgeInsets.only(left: 15, right: 10),
-        title: Text(widget.title),
-        value: prefs.getBool(widget.id) ?? false,
-        onChanged: (bool value) {
-          setState(() {
-            prefs.setBool(widget.id, value);
-          });
-        },
+        clipBehavior: Clip.antiAlias,
+        child: SwitchListTile(
+          contentPadding: const EdgeInsets.only(left: 15, right: 10),
+          title: Text(widget.title),
+          value: prefs.getBool(widget.id) ?? false,
+          onChanged: (bool value) {
+            setState(() {
+              prefs.setBool(widget.id, value);
+            });
+          },
+        ),
       ),
     );
   }

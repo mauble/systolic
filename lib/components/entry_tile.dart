@@ -19,40 +19,41 @@ class EntryTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 20, left: 15, right: 15),
+      child: Material(
         color: Theme.of(context).colorScheme.surfaceVariant,
         borderRadius: BorderRadius.circular(16),
-      ),
-      margin: const EdgeInsets.only(bottom: 20, left: 15, right: 15),
-      child: ListTile(
-        contentPadding: const EdgeInsets.only(left: 15, right: 9, bottom: 3),
-        title: Text(
-          '${entry.systole}・${entry.diastole}・${entry.pulse}',
-          style: const TextStyle(
-            fontSize: 21,
-          ),
-        ),
-        subtitle: Text(
-          DateFormat(AppLocalizations.of(context)!.timeFormat)
-              .format(DateTime.fromMillisecondsSinceEpoch(entry.time)),
-          style: const TextStyle(
-            fontSize: 17,
-          ),
-        ),
-        trailing: Builder(
-          builder: (context) => GestureDetector(
-            onTap: () => showPopover(
-              context: context,
-              height: 100,
-              backgroundColor: Theme.of(context).colorScheme.background,
-              bodyBuilder: (context) => EntryPopover(
-                onEditTap: onEditTap,
-                onDeleteTap: onDeleteTap,
-                buttonHeight: 50,
-              ),
+        clipBehavior: Clip.antiAlias,
+        child: ListTile(
+          contentPadding: const EdgeInsets.only(left: 15, right: 9, bottom: 3),
+          title: Text(
+            '${entry.systole}・${entry.diastole}・${entry.pulse}',
+            style: const TextStyle(
+              fontSize: 21,
             ),
-            child: const Icon(Icons.more_vert),
+          ),
+          subtitle: Text(
+            DateFormat(AppLocalizations.of(context)!.timeFormat)
+                .format(DateTime.fromMillisecondsSinceEpoch(entry.time)),
+            style: const TextStyle(
+              fontSize: 17,
+            ),
+          ),
+          trailing: Builder(
+            builder: (context) => GestureDetector(
+              onTap: () => showPopover(
+                context: context,
+                height: 100,
+                backgroundColor: Theme.of(context).colorScheme.background,
+                bodyBuilder: (context) => EntryPopover(
+                  onEditTap: onEditTap,
+                  onDeleteTap: onDeleteTap,
+                  buttonHeight: 50,
+                ),
+              ),
+              child: const Icon(Icons.more_vert),
+            ),
           ),
         ),
       ),
