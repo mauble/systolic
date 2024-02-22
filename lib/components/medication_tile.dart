@@ -25,7 +25,7 @@ class MedicationTile extends StatelessWidget {
       ),
       margin: const EdgeInsets.only(bottom: 20, left: 15, right: 15),
       child: ListTile(
-        contentPadding: const EdgeInsets.only(left: 17, right: 12, bottom: 3),
+        contentPadding: const EdgeInsets.only(left: 15, right: 9, bottom: 3),
         title: Text(
           entry.name,
           style: TextStyle(
