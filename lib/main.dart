@@ -54,7 +54,7 @@ Widget centerText(String text) {
     child: Padding(
       padding: const EdgeInsets.symmetric(
         horizontal: 25,
-        vertical: 200,
+        vertical: 220,
       ),
       child: Text(
         text,
