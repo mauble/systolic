@@ -30,7 +30,7 @@ class PageTemplate extends StatelessWidget {
               pageTitle,
               style: TextStyle(
                 fontFamily: getFont(true),
-                fontSize: 30,
+                fontSize: 31,
               ),
             ),
           ),

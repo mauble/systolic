@@ -60,7 +60,7 @@ Widget centerText(String text) {
         text,
         textAlign: TextAlign.center,
         style: const TextStyle(
-          fontSize: 17,
+          fontSize: 16,
         ),
       ),
     ),
