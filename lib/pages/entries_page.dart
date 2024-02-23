@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:intl/intl.dart';
-import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
+import 'package:intl/intl.dart';
 
+import 'package:systolic/main.dart';
 import 'package:systolic/models/entry/entry.dart';
 import 'package:systolic/models/entry/entry_db.dart';
 import 'package:systolic/components/entry_tile.dart';
@@ -175,24 +176,7 @@ class _EntriesPageState extends State<EntriesPage> {
       ),
       pageTitle: AppLocalizations.of(context)!.measurements,
       pageContent: currentEntries.isEmpty
-          ? SizedBox(
-              height: MediaQuery.of(context).size.height * 0.6,
-              child: Center(
-                child: Padding(
-                  padding: const EdgeInsets.only(
-                    left: 25,
-                    right: 25,
-                  ),
-                  child: Text(
-                    AppLocalizations.of(context)!.noEntry,
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(
-                      fontSize: 15,
-                    ),
-                  ),
-                ),
-              ),
-            )
+          ? centerText(AppLocalizations.of(context)!.noEntry)
           : Expanded(
               child: ListView.builder(
                 itemCount: groupedEntries.length,
@@ -201,17 +185,16 @@ class _EntriesPageState extends State<EntriesPage> {
                   final String dayKey = keys[index];
                   final List<Entry> entries =
                       sortEntriesByTime(groupedEntries[dayKey]!);
-
                   return Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
-                          padding: const EdgeInsets.only(
-                            bottom: 20,
-                            left: 19,
-                            right: 16,
-                          ),
-                          child: Row(children: <Widget>[
+                        padding: const EdgeInsets.only(
+                          bottom: 20,
+                          left: 19,
+                          right: 16,
+                        ),
+                        child: Row(
+                          children: [
                             Padding(
                               padding: const EdgeInsets.only(
                                 right: 15,
@@ -224,7 +207,9 @@ class _EntriesPageState extends State<EntriesPage> {
                               ),
                             ),
                             const Expanded(child: Divider()),
-                          ])),
+                          ],
+                        ),
+                      ),
                       ListView.builder(
                         shrinkWrap: true,
                         physics: const NeverScrollableScrollPhysics(),

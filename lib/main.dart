@@ -1,9 +1,9 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:system_theme/system_theme.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'dart:ui';
 
 import 'package:systolic/models/entry/entry_db.dart';
 import 'package:systolic/models/medication/medication_db.dart';
@@ -47,6 +47,24 @@ String? getFont(bool serif) {
     }
   }
   return serif ? 'PlayfairDisplay' : 'InterTight';
+}
+
+Widget centerText(String text) {
+  return Center(
+    child: Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: 25,
+        vertical: 200,
+      ),
+      child: Text(
+        text,
+        textAlign: TextAlign.center,
+        style: const TextStyle(
+          fontSize: 17,
+        ),
+      ),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {

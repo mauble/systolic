@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:systolic/main.dart';
 
 import 'package:systolic/models/medication/medication.dart';
 import 'package:systolic/models/medication/medication_db.dart';
@@ -150,24 +151,7 @@ class _MedicationPageState extends State<MedicationPage> {
       ),
       pageTitle: AppLocalizations.of(context)!.medication,
       pageContent: currentEntries.isEmpty
-          ? SizedBox(
-              height: MediaQuery.of(context).size.height * 0.6,
-              child: Center(
-                child: Padding(
-                  padding: const EdgeInsets.only(
-                    left: 25,
-                    right: 25,
-                  ),
-                  child: Text(
-                    AppLocalizations.of(context)!.noMedication,
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(
-                      fontSize: 15,
-                    ),
-                  ),
-                ),
-              ),
-            )
+          ? centerText(AppLocalizations.of(context)!.noMedication)
           : Expanded(
               child: ListView.builder(
                 itemCount: currentEntries.length,

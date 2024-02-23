@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'package:systolic/components/page_template.dart';
+import 'package:systolic/main.dart';
 
 class OverviewPage extends StatelessWidget {
   const OverviewPage({super.key});
@@ -10,17 +11,7 @@ class OverviewPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return PageTemplate(
       pageTitle: AppLocalizations.of(context)!.overview,
-      pageContent: SizedBox(
-        height: MediaQuery.of(context).size.height * 0.6,
-        child: const Center(
-          child: Text(
-            'Work in Progress.',
-            style: TextStyle(
-              fontSize: 15,
-            ),
-          ),
-        ),
-      ),
+      pageContent: centerText('Work in Progress.'),
     );
   }
 }
