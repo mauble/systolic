@@ -208,8 +208,8 @@ class _EntriesPageState extends State<EntriesPage> {
                       Padding(
                           padding: const EdgeInsets.only(
                             bottom: 20,
-                            left: 18,
-                            right: 18,
+                            left: 19,
+                            right: 16,
                           ),
                           child: Row(children: <Widget>[
                             Padding(

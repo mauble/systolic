@@ -25,7 +25,7 @@ class MedicationTile extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
         clipBehavior: Clip.antiAlias,
         child: ListTile(
-          contentPadding: const EdgeInsets.only(left: 15, right: 9, bottom: 3),
+          contentPadding: const EdgeInsets.only(left: 15, right: 9, bottom: 2),
           title: Text(
             entry.name,
             style: TextStyle(
