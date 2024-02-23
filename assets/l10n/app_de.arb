@@ -1,10 +1,10 @@
 {
     "measurements": "Messungen",
 
-    "noEntry": "Willkommen bei Systolic.\n\nMessen Sie Ihren Blutdruck und tragen Sie Ihre Werte ein, indem Sie auf den Button unten tippen.",
+    "noEntry": "Willkommen bei Systolic.\nMessen Sie Ihren Blutdruck und tragen Sie Ihre Werte ein, indem Sie auf den Button unten tippen.",
 
-    "addEntry": "Eintrag hinzufügen",
-    "editEntry": "Eintrag bearbeiten",
+    "addEntry": "Messung hinzufügen",
+    "editEntry": "Messung bearbeiten",
 
     "cancel": "Abbrechen",
     "save": "Speichern",

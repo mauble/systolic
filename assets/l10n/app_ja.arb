@@ -1,7 +1,7 @@
 {
     "measurements": "計測",
 
-    "noEntry": "Systolicへようこそ。\n\n始めに血圧を測定し、下のボタンをタップして値を入力してください。",
+    "noEntry": "Systolicへようこそ。\n始めに血圧を測定し、下のボタンをタップして値を入力してください。",
 
     "addEntry": "測定結果を追加",
     "editEntry": "測定結果を編集",

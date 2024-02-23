@@ -1,8 +1,7 @@
 {
     "measurements": "測量值",
-    "overview": "概覽",
-    "medication": "藥物",
-    "options": "選項",
+
+    "noEntry": "歡迎使用「Systolic」。\n您僅需測量您的血壓，並點擊下方按鈕輸入您的結果以開始。",
 
     "addEntry": "新記錄",
     "editEntry": "編輯記錄",
@@ -16,7 +15,20 @@
     "diastole": "舒張壓",
     "pulse": "脈搏",
 
-    "noEntry": "歡迎使用「Systolic」。\n\n您僅需測量您的血壓，並點擊下方按鈕輸入您的結果以開始。",
+    "overview": "概覽",
+
+    "medication": "藥物",
+
+    "noMedication": "無可用藥物。\n請點擊下方按鈕添加藥物。",
+
+    "addMedication": "添加新藥物",
+    "editMedication": "編輯藥物",
+
+    "name": "名稱",
+    "dosage": "劑量",
+    "unit": "單位",
+
+    "options": "選項",
 
     "dateFormat": "yyyy年MM月dd日",
     "timeFormat": "hh:mm a"

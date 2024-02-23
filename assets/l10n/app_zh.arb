@@ -1,8 +1,7 @@
 {
     "measurements": "测量值",
-    "overview": "概览",
-    "medication": "药物",
-    "options": "选项",
+
+    "noEntry": "欢迎使用「Systolic」。\n您仅需测量您的血压，并点击下方按钮输入您的结果以开始。",
 
     "addEntry": "新记录",
     "editEntry": "编辑记录",
@@ -16,7 +15,20 @@
     "diastole": "舒张压",
     "pulse": "脉搏",
 
-    "noEntry": "欢迎使用「Systolic」。\n\n您仅需测量您的血压，并点击下方按钮输入您的结果以开始。",
+    "overview": "概览",
+
+    "medication": "药物",
+
+    "noMedication": "无可用药物。\n请点击下方按钮添加药物。",
+
+    "addMedication": "添加新药物",
+    "editMedication": "编辑药物",
+
+    "name": "名称",
+    "dosage": "剂量",
+    "unit": "单位",
+
+    "options": "选项",
 
     "dateFormat": "yyyy年MM月dd日",
     "timeFormat": "hh:mm a"
