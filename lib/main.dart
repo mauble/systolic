@@ -50,17 +50,22 @@ String? getFont(bool serif) {
 }
 
 Widget centerText(String text) {
-  return Center(
-    child: Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 25,
-        vertical: 220,
-      ),
-      child: Text(
-        text,
-        textAlign: TextAlign.center,
-        style: const TextStyle(
-          fontSize: 16,
+  return Padding(
+    padding: const EdgeInsets.symmetric(horizontal: 30),
+    child: Center(
+      child: Transform.translate(
+        offset: const Offset(0, -50),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              text,
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                fontSize: 16,
+              ),
+            ),
+          ],
         ),
       ),
     ),

@@ -1,7 +1,7 @@
 {
     "measurements": "Messungen",
 
-    "noEntry": "Willkommen bei Systolic.\nMessen Sie Ihren Blutdruck und tragen Sie Ihre Werte ein, indem Sie auf den Button unten tippen.",
+    "noEntry": "Willkommen bei Systolic.\n\nMessen Sie Ihren Blutdruck und tragen Sie Ihre Werte ein, indem Sie auf den Button unten tippen.",
 
     "addEntry": "Messung hinzufügen",
     "editEntry": "Messung bearbeiten",
@@ -19,7 +19,7 @@
 
     "medication": "Medikamente",
 
-    "noMedication": "Keine Medikamente verfügbar.\nTragen sie Ihre Medikamente ein, indem Sie auf den Button unten tippen.",
+    "noMedication": "Keine Medikamente verfügbar.\n\nTragen sie Ihre Medikamente ein, indem Sie auf den Button unten tippen.",
 
     "addMedication": "Medizin hinzufügen",
     "editMedication": "Medizin bearbeiten",

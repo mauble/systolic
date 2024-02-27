@@ -1,7 +1,7 @@
 {
     "measurements": "Measurements",
 
-    "noEntry": "Welcome to Systolic.\nTo start, just measure your blood pressure and enter your results by tapping the button below.",
+    "noEntry": "Welcome to Systolic.\n\nTo start, just measure your blood pressure and enter your results by tapping the button below.",
 
     "addEntry": "New entry",
     "editEntry": "Edit entry",
@@ -19,7 +19,7 @@
 
     "medication": "Medication",
 
-    "noMedication": "No medication available.\nPlease add medicine by tapping the button below.",
+    "noMedication": "No medication available.\n\nPlease add medicine by tapping the button below.",
 
     "addMedication": "Add new medicine",
     "editMedication": "Edit medicine",
