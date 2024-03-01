@@ -11,17 +11,19 @@ class OptionsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return PageTemplate(
       pageTitle: AppLocalizations.of(context)!.options,
-      pageContent: const Column(
-        children: [
-          OptionsTile(
-            id: 'placeholder',
-            title: 'Placeholder',
-          ),
-          OptionsTile(
-            id: 'placeholder2',
-            title: 'Placeholder2',
-          ),
-        ],
+      pageContent: const Expanded(
+        child: Column(
+          children: [
+            OptionsTile(
+              id: 'placeholder',
+              title: 'Placeholder',
+            ),
+            OptionsTile(
+              id: 'placeholder2',
+              title: 'Placeholder2',
+            ),
+          ],
+        ),
       ),
     );
   }

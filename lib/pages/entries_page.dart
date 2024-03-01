@@ -176,7 +176,7 @@ class _EntriesPageState extends State<EntriesPage> {
       ),
       pageTitle: AppLocalizations.of(context)!.measurements,
       pageContent: currentEntries.isEmpty
-          ? centerText(AppLocalizations.of(context)!.noEntry)
+          ? Expanded(child: centerText(AppLocalizations.of(context)!.noEntry))
           : Expanded(
               child: ListView.builder(
                 itemCount: groupedEntries.length,

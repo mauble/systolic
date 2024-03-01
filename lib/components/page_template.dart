@@ -34,7 +34,7 @@ class PageTemplate extends StatelessWidget {
               ),
             ),
           ),
-          Expanded(child: pageContent),
+          pageContent,
         ],
       ),
     );

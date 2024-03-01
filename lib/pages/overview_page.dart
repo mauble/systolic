@@ -11,7 +11,9 @@ class OverviewPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return PageTemplate(
       pageTitle: AppLocalizations.of(context)!.overview,
-      pageContent: centerText('Work in Progress.'),
+      pageContent: Expanded(
+        child: centerText('Work in Progress.'),
+      ),
     );
   }
 }

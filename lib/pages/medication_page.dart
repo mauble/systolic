@@ -151,7 +151,8 @@ class _MedicationPageState extends State<MedicationPage> {
       ),
       pageTitle: AppLocalizations.of(context)!.medication,
       pageContent: currentEntries.isEmpty
-          ? centerText(AppLocalizations.of(context)!.noMedication)
+          ? Expanded(
+              child: centerText(AppLocalizations.of(context)!.noMedication))
           : Expanded(
               child: ListView.builder(
                 itemCount: currentEntries.length,
