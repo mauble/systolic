@@ -17,6 +17,8 @@
 
     "overview": "概览",
 
+    "noOverview": "无法生成概览。\n\n测量血压并在测量中输入数值。",
+
     "medication": "药物",
 
     "noMedication": "无可用药物。\n\n请点击下方按钮添加药物。",

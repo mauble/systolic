@@ -12,7 +12,7 @@ class OverviewPage extends StatelessWidget {
     return PageTemplate(
       pageTitle: AppLocalizations.of(context)!.overview,
       pageContent: Expanded(
-        child: centerText('Work in Progress.'),
+        child: centerText(AppLocalizations.of(context)!.noOverview),
       ),
     );
   }

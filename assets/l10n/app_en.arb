@@ -17,6 +17,8 @@
 
     "overview": "Overview",
 
+    "noOverview": "Overview couldn't get generated.\n\nPlease measure your blood pressure and add the results to your measurements.",
+
     "medication": "Medication",
 
     "noMedication": "No medication available.\n\nPlease add medicine by tapping the button below.",

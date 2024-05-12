@@ -17,6 +17,8 @@
 
     "overview": "Übersicht",
 
+    "noOverview": "Keine Übersicht verfügbar.\n\nMessen Sie Ihren Blutdruck und tragen Sie Ihre Werte bei den Messungen ein.",
+
     "medication": "Medikamente",
 
     "noMedication": "Keine Medikamente verfügbar.\n\nTragen sie Ihre Medikamente ein, indem Sie auf den Button unten tippen.",
