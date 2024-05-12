@@ -18,10 +18,6 @@ class OptionsPage extends StatelessWidget {
               id: 'placeholder',
               title: 'Placeholder',
             ),
-            OptionsTile(
-              id: 'placeholder2',
-              title: 'Placeholder2',
-            ),
           ],
         ),
       ),
