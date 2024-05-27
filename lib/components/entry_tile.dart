@@ -22,7 +22,7 @@ class EntryTile extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(bottom: 20, left: 15, right: 15),
       child: Material(
-        color: Theme.of(context).colorScheme.surfaceVariant,
+        color: Theme.of(context).colorScheme.surfaceContainerHighest,
         borderRadius: BorderRadius.circular(16),
         clipBehavior: Clip.antiAlias,
         child: ListTile(
@@ -45,7 +45,7 @@ class EntryTile extends StatelessWidget {
               onTap: () => showPopover(
                 context: context,
                 height: 100,
-                backgroundColor: Theme.of(context).colorScheme.background,
+                backgroundColor: Theme.of(context).colorScheme.surface,
                 bodyBuilder: (context) => EntryPopover(
                   onEditTap: onEditTap,
                   onDeleteTap: onDeleteTap,

@@ -40,7 +40,7 @@ class _OptionsTileState extends State<OptionsTile> {
           return Padding(
             padding: const EdgeInsets.only(bottom: 20, left: 15, right: 15),
             child: Material(
-              color: Theme.of(context).colorScheme.surfaceVariant,
+              color: Theme.of(context).colorScheme.surfaceContainerHighest,
               borderRadius: BorderRadius.circular(16),
               clipBehavior: Clip.antiAlias,
               child: SwitchListTile(
